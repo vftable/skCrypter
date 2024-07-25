@@ -53,7 +53,7 @@ skCrypter works out of the box with both Usermode + Kernelmode and compiler opti
 # Example:
 
 Include skCrypter.h
-
+```cpp
 
     auto testString = skCrypt(L"TestString");	// encrypted at compile-time
 							// or skCrypt_key to set the keys manually
@@ -63,7 +63,7 @@ Include skCrypter.h
     testString.encrypt();	                        // encrypt after usage if needed again
                                                 // or                   
     testString.clear();	                        // set full string storage to 0
-    
+```
 Important:
 - Compiler Optimization /02 might cause wrong decryption, so use /01 or disable it
 - For Kernel mode `__TIME__` has to be enabled by setting "Project properties" -> "Driver Setting" -> "Driver Model" -> "Allow Date, Time and TimeStamp". Alternatively replace `__TIME__` with your own keys
