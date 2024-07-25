@@ -54,15 +54,10 @@ skCrypter works out of the box with both Usermode + Kernelmode and compiler opti
 
 Include skCrypter.h
 ```cpp
-
-    auto testString = skCrypt(L"TestString");	// encrypted at compile-time
-							// or skCrypt_key to set the keys manually
-
-    wprintf(testString);                            // automatic decryption on usage (alternatively .decrypt())
-
-    testString.encrypt();	                        // encrypt after usage if needed again
-                                                // or                   
-    testString.clear();	                        // set full string storage to 0
+auto testString = skCrypt(L"TestString"); // encrypted at compile-time
+wprintf(testString);                      // automatic decryption on usage (alternatively .decrypt())
+testString.encrypt();                     // encrypt after usage if needed again
+testString.clear();                       // set full string storage to 0
 ```
 Important:
 - Compiler Optimization /02 might cause wrong decryption, so use /01 or disable it
